@@ -27,5 +27,12 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
       },
-    }
+    },
+    {
+    'theprimeagen/harpoon', name = 'harpoon'
+    },
+    {
+    'mbbill/undotree', name = 'undotree'
+    },
 })
+
