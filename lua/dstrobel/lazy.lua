@@ -16,5 +16,16 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    {
+    'rose-pine/neovim', name = 'rose-pine' 
+    },
+    {
+    "nvim-treesitter/nvim-treesitter",
+      event = { "BufReadPre", "BufNewFile" },
+      build = ":TSUpdate",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        "windwp/nvim-ts-autotag",
+      },
+    }
 })
