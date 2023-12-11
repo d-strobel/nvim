@@ -34,5 +34,8 @@ require("lazy").setup({
     {
     'mbbill/undotree', name = 'undotree'
     },
+    {
+    'tpope/vim-fugitive', name = 'fugitive'
+    },
 })
 
