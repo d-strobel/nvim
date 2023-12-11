@@ -38,6 +38,9 @@ require("lazy").setup({
   {
     'tpope/vim-fugitive', name = 'fugitive'
   },
+  {
+    'nvim-tree/nvim-tree.lua', name = 'nvim-tree'
+  },
   --- LSP
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
