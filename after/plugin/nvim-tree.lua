@@ -21,6 +21,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "p", api.fs.paste, opts "Paste file")
   vim.keymap.set("n", "y", api.fs.copy.node, opts "Copy file")
   vim.keymap.set("n", "d", api.fs.remove, opts "Delete file")
+  vim.keymap.set("n", "R", api.tree.reload, opts "Reload tree")
 end
 
 require("nvim-tree").setup({
@@ -33,6 +34,9 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
+    add_trailing = false,
+    highlight_git = true,
+    full_name = false,
     indent_markers = {
       enable = true,
     },
