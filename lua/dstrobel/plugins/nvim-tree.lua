@@ -26,6 +26,7 @@ return {
         vim.keymap.set("n", "y", api.fs.copy.node, opts "Copy file")
         vim.keymap.set("n", "d", api.fs.remove, opts "Delete file")
         vim.keymap.set("n", "R", api.tree.reload, opts "Reload tree")
+        vim.keymap.set("n", "n", api.fs.create, opts "New file / directory")
       end
 
       -- configure nvim-tree
