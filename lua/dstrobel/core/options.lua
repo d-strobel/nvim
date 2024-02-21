@@ -2,6 +2,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Curser
+vim.opt.cursorline = true
+
 -- Indenting
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -13,4 +16,11 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 8
+-- Scrollin
+vim.opt.scrolloff = 10
+
+-- Neovide
+if vim.g.neovide then
+  vim.o.guifont = "Source Code Pro:h11"
+end
+

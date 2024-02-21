@@ -1,2 +1,2 @@
-require("dstrobel.core.remaps")
-require("dstrobel.core.set")
+require("dstrobel.core.keymaps")
+require("dstrobel.core.options")
