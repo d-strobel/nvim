@@ -2,6 +2,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Curser
+vim.opt.cursorline = true
+
 -- Indenting
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
