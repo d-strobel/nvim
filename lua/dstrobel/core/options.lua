@@ -17,7 +17,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Scrollin
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- Neovide
 if vim.g.neovide then
