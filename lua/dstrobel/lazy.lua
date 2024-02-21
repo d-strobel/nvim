@@ -12,5 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "dstrobel.plugins" }
+  { import = "dstrobel.plugins" },
+  { import = "dstrobel.plugins.lsp" },
 })
