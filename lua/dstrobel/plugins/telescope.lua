@@ -22,7 +22,7 @@ return {
     })
 
     -- set keymaps
-    local keymap = vim.keymap 
+    local keymap = vim.keymap
 
     keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
   end,
