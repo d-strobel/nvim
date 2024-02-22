@@ -2,6 +2,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Linebreak
+vim.opt.wrap = false
+
 -- Curser
 vim.opt.cursorline = true
 
