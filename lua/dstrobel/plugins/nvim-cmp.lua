@@ -36,7 +36,7 @@ return {
         -- ["<C-K>"] = cmp.mapping.scroll_docs(-4),
         -- ["<C-J>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<ESC>"] = cmp.mapping.abort(),
+        ["<C-c>"] = cmp.mapping.abort(),
         ["<C-l>"] = cmp.mapping.confirm({ select = false }),
       }),
       -- sources for autocompletion
