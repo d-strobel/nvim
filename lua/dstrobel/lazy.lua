@@ -11,7 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  { import = "dstrobel.plugins" },
-  { import = "dstrobel.plugins.lsp" },
+require("lazy").setup({ { import = "dstrobel.plugins" }, { import = "dstrobel.plugins.lsp" } }, {
+  install = {
+    colorscheme = { "tokyonight" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
 })
