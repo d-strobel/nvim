@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.indentscope', 
+  'echasnovski/mini.indentscope',
   event = { "BufReadPre", "BufNewFile" },
   version = '*',
   opts = {
