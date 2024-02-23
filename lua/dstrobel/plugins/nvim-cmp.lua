@@ -33,8 +33,8 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        -- ["<C-K>"] = cmp.mapping.scroll_docs(-4),
-        -- ["<C-J>"] = cmp.mapping.scroll_docs(4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-c>"] = cmp.mapping.abort(),
         ["<C-l>"] = cmp.mapping.confirm({ select = false }),
@@ -43,6 +43,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
+        { name = "copilot" }, -- copilot
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
       }),
@@ -51,6 +52,9 @@ return {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          symbol_map = {
+							Copilot = "",
+					},
         }),
       },
     })

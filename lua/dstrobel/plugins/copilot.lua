@@ -12,18 +12,9 @@ return {
           enabled = false,
         },
         suggestion = {
-          enabled = false,
-          auto_trigger = false,
-          debounce = 75,
-          keymap = {
-            accept = "<CR>",
-            accept_word = false,
-            accept_line = false,
-            dismiss = "<C-]>",
-          },
+          enabled = true,
         },
         filetypes = {
-          yaml = false,
           markdown = false,
           help = false,
           gitcommit = false,
@@ -38,4 +29,12 @@ return {
       })
     end,
   },
+  {
+		"zbirenbaum/copilot-cmp",
+		event = "InsertEnter",
+		dependencies = { "zbirenbaum/copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
 }
