@@ -19,8 +19,12 @@ return {
           return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
         end
 
+        -- open files
         vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
         vim.keymap.set("n", "<CR>", api.node.open.edit, opts "Open")
+        vim.keymap.set("n", "v", api.node.open.vertical, opts "Open")
+        vim.keymap.set("n", "s", api.node.open.horizontal, opts "Open")
+
         vim.keymap.set("n", "r", api.fs.rename_sub, opts "Rename")
         vim.keymap.set("n", "q", api.tree.close, opts "Close")
         vim.keymap.set("n", "p", api.fs.paste, opts "Paste file")
