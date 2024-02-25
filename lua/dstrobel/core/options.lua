@@ -26,4 +26,3 @@ vim.opt.scrolloff = 10
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h11"
 end
-
