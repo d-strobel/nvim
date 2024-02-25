@@ -20,3 +20,5 @@ Some requirements to get this setup working:
 ## Inspirations
 * [https://github.com/josean-dev/dev-environment-files](https://github.com/josean-dev/dev-environment-files)
 * [https://github.com/ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
+* [https://github.com/Sonicfury/dotfiles/.config/nvim](https://github.com/Sonicfury/dotfiles/.config/nvim)
+* [https://github.com/omerxx/dotfiles/nvim](https://github.com/omerxx/dotfiles/nvim)
