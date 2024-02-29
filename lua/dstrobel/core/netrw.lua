@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd('filetype', {
     bind('n', '%') -- new file
     bind('r', 'R') -- rename file
     bind('l', '<CR>') -- select file
+    bind('t', '<nop>')  -- no tabs
 
   end
 })
