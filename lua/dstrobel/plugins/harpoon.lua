@@ -15,8 +15,8 @@ return {
     local keymap = vim.keymap
 
     keymap.set("n", "<leader>ha", function() harpoon:list():append() end, { desc = "Add file to harpoon" })
-    keymap.set("n", "<tab>", function() harpoon:list():next() end, { desc = "Go to next harpoon file" })
-    keymap.set("n", "<S-tab>", function() harpoon:list():prev() end, { desc = "Go to previous harpoon file" })
+    keymap.set("n", "<A-k>", function() harpoon:list():next() end, { desc = "Go to next harpoon file" })
+    keymap.set("n", "<A-j>", function() harpoon:list():prev() end, { desc = "Go to previous harpoon file" })
     keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Open harpoon quick menu" })
 
     keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end, { desc = "Go to harpoon file 1" })
