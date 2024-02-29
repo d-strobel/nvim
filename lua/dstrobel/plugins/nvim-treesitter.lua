@@ -34,7 +34,7 @@ return {
           "gomod",
           "gosum",
           "rust",
-          "terraform",
+          "hcl",
         },
       })
     end
