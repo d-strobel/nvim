@@ -23,6 +23,7 @@ return {
 
     -- set keymaps
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find in files" })
 
     -- Optios
     vim.g.tokyonight_dark_float = false
