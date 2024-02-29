@@ -7,16 +7,11 @@ return {
 
       tokyonight.setup({
         style = "night",
-
-        on_highlights = function(hl, colors)
-          hl.CurserLineNr = {
-            fg = colors.blue,
-            bold = true
-          }
-          hl.CurserLine = {
-            bg = colors.blue
-          }
-        end
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent"
+        }
       })
 
       -- load the colorscheme here

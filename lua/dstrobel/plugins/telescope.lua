@@ -22,9 +22,10 @@ return {
     })
 
     -- set keymaps
-    local keymap = vim.keymap
+    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 
-    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    -- Optios
+    vim.g.tokyonight_dark_float = false
   end,
 }
 
