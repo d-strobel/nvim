@@ -15,12 +15,19 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- backspace
+vim.opt.backspace = "indent,eol,start"
+
 -- Searching
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Scrollin
 vim.opt.scrolloff = 10
+
+-- split windows
+vim.opt.splitright = true -- split vertical window to the right
+vim.opt.splitbelow = true -- split horizontal window to the bottom
 
 -- Neovide
 if vim.g.neovide then
