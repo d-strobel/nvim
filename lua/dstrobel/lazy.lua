@@ -22,4 +22,7 @@ require("lazy").setup({ { import = "dstrobel.plugins" }, { import = "dstrobel.pl
   change_detection = {
     notify = false,
   },
+  ui = {
+    border = "single",
+  }
 })
