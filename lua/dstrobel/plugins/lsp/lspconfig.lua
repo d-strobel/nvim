@@ -49,13 +49,13 @@ return {
     end
 
     -- set the border for floating windows
-    windows.default_options.border = 'single'
+    windows.default_options.border = "rounded"
 
     vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(
       vim.lsp.handlers.hover,
       {
-        border = "single"
+        border = "rounded"
       }
     )
 
@@ -63,7 +63,7 @@ return {
     vim.lsp.with(
       vim.lsp.handlers.signature_help,
       {
-        border = "single"
+        border = "rounded"
       }
     )
 
