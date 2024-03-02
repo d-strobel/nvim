@@ -33,7 +33,7 @@ return {
     -- set keymaps
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find in files" })
-    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
+    vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
 
     -- Optios
     vim.g.tokyonight_dark_float = false
