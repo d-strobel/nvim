@@ -77,6 +77,19 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- configure ansible server
+    lspconfig["ansiblels"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "yaml" },
+    })
+
+    -- configure yaml server
+    lspconfig["yamlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure golang server
     lspconfig["gopls"].setup({
       capabilities = capabilities,
@@ -87,25 +100,7 @@ return {
     lspconfig["terraformls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-
-      vim.api.nvim_create_autocmd({"BufWritePre"}, {
-        pattern = { ".tf", ".tfvars" },
-        callback = function()
-          vim.lsp.buf.format()
-        end
-      }),
-    })
-
-    -- configure html server
-    lspconfig["html"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure css server
-    lspconfig["cssls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+      filetypes = { "terraform", "terraform-vars" },
     })
 
     -- configure lua server (with special settings)
