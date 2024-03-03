@@ -32,4 +32,13 @@ vim.opt.splitbelow = true -- split horizontal window to the bottom
 -- Neovide
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h11"
+  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_refresh_rate = 60
+  vim.g.neovide_cursor_animation_length = 0.03
+  vim.g.neovide_scroll_animation_length = 0.1
+  vim.g.neovide_padding_top = 10
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+  vim.g.neovide_remember_window_size = true
 end
