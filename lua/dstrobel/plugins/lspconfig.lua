@@ -45,27 +45,30 @@ return {
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = "Show documentation for what is under cursor"
-      keymap.set({"n", "i"}, "<C-h>", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+      keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+      -- Set autoformatting on save
+      vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
     end
 
     -- set the border for floating windows
     windows.default_options.border = "rounded"
 
     vim.lsp.handlers["textDocument/hover"] =
-    vim.lsp.with(
-      vim.lsp.handlers.hover,
-      {
-        border = "rounded"
-      }
-    )
+        vim.lsp.with(
+          vim.lsp.handlers.hover,
+          {
+            border = "rounded"
+          }
+        )
 
     vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(
-      vim.lsp.handlers.signature_help,
-      {
-        border = "rounded"
-      }
-    )
+        vim.lsp.with(
+          vim.lsp.handlers.signature_help,
+          {
+            border = "rounded"
+          }
+        )
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -81,12 +84,7 @@ return {
     lspconfig["ansiblels"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-
-    -- configure yaml server
-    lspconfig["yamlls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+      filetypes = { "yaml", "ansible" },
     })
 
     -- configure golang server
@@ -128,6 +126,5 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-
   end,
 }
