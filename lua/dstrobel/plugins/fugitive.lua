@@ -4,8 +4,19 @@ return {
     -- Git status
     vim.keymap.set("n", "<leader>gs", "<CMD>Git<CR>", { noremap = true, silent = true })
 
-    -- Usefull keymaps
-    vim.keymap.set("n", "<leader>gc", "<CMD>Git commit", { noremap = true, silent = true })
+    -- Git commit with message input
+    vim.keymap.set("n", "<leader>gc", function()
+      local msg = vim.fn.input("Commit message > ")
+      -- Concat message string
+      if msg ~= "" then
+        msg = "Git commit -m '" .. msg
+        vim.cmd(msg .. "'")
+      else
+        vim.cmd("Git commit")
+      end
+    end, { noremap = true, silent = true })
+
+    -- Other usefull keymaps
     vim.keymap.set("n", "<leader>gp", "<CMD>Git push<CR>", { noremap = true, silent = true })
     vim.keymap.set("n", "<leader>gd", "<CMD>Git diff<CR>", { noremap = true, silent = true })
     vim.keymap.set("n", "<leader>gD", "<CMD>Telescope git_status<CR>", { noremap = true, silent = true })
