@@ -4,9 +4,12 @@ vim.g.mapleader = " "
 -- for conciseness
 local keymap = vim.keymap
 
+-- Disable space in normal mode
+keymap.set("n", "<Space>", "<Nop>")
+
 -- Move multilines in visual mode
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Centralize while going page up and down
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -25,3 +28,6 @@ keymap.set("n", "<leader>P", [["+P]])
 
 -- Delete to void registry
 keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+-- Sarch and replace
+keymap.set("n", "<leader>sr", ":%s/")
