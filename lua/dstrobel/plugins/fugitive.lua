@@ -9,7 +9,7 @@ return {
       local msg = vim.fn.input("Commit message > ")
       -- Concat message string
       if msg ~= "" then
-        msg = "Git commit -m '" .. msg
+        msg = "Git commit -q -m '" .. msg
         vim.cmd(msg .. "'")
       else
         vim.cmd("Git commit")
