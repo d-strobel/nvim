@@ -35,8 +35,12 @@ return {
           "gosum",
           "rust",
           "hcl",
+          "terraform"
         },
       })
+
+      -- Specific filetypes
+      vim.treesitter.language.register('hcl', 'terraform-vars')  -- the someft filetype will use the python parser and queries.
     end
   }
 }
