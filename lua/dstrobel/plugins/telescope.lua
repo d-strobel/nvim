@@ -10,6 +10,7 @@ return {
 
     telescope.setup({
       defaults = {
+        -- winblend = 100,
         path_display = { "truncate " },
         mappings = {
           i = {
@@ -35,8 +36,6 @@ return {
     vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find in files" })
     vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
 
-    -- Optios
-    vim.g.tokyonight_dark_float = false
   end,
 }
 
