@@ -47,8 +47,7 @@ return {
       opts.desc = "Show documentation for what is under cursor"
       keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
-      -- Set autoformatting on save
-      vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     end
 
     -- set the border for floating windows
