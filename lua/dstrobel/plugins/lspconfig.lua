@@ -125,5 +125,20 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
+    -- Powershell lsp config
+    lspconfig["powershell_es"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      -- bundle_path = "/home/dstrobel/.local/share/nvim/mason/packages/powershell-editor-services",
+      bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
+      -- cmd = { "pwsh", "-NoLogo", "-Command", "[[& '%s/PowerShellEditorServices/Start-EditorServices.ps1' -BundledModulesPath '%s' -LogPath '%s/powershell_es.log' -SessionDetailsPath '%s/powershell_es.session.json' -FeatureFlags @() -AdditionalModules @() -HostName nvim -HostProfileId 0 -HostVersion 1.0.0 -Stdio -LogLevel Normal]]" },
+    })
+
+    -- SlintUI lsp config
+    lspconfig["slint_lsp"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
   end,
 }

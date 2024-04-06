@@ -40,7 +40,8 @@ return {
           "diff",
           "git_config",
           "promql",
-          "toml"
+          "toml",
+          "slint"
         },
       })
 
