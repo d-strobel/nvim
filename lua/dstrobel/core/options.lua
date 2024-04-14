@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
 -- Neovide
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h11"
-  vim.g.neovide_transparency = 0.85
+  vim.g.neovide_transparency = 1
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_cursor_animation_length = 0.04
   vim.g.neovide_scroll_animation_length = 0.1
