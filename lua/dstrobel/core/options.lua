@@ -19,7 +19,7 @@ vim.opt.smartindent = true
 vim.opt.backspace = "indent,eol,start"
 
 -- Searching
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Scrollin
@@ -33,6 +33,17 @@ vim.opt.splitbelow = true -- split horizontal window to the bottom
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufNewFile' }, {
   pattern = '*.slint',
   command = 'set filetype=slint',
+})
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 -- Neovide
