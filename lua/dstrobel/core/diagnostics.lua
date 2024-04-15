@@ -1,6 +1,6 @@
 -- Diagnostic settings
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   signs = true,
   update_in_insert = true,
   underline = true,
@@ -8,8 +8,6 @@ vim.diagnostic.config({
   float = {
     border = 'rounded',
     source = 'always',
-    -- header = '',
-    -- prefix = '',
   },
 })
 
