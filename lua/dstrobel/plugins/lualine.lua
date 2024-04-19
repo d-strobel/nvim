@@ -60,7 +60,7 @@ return {
       options = {
         theme = lualine_theme,
         disabled_filetypes = {
-          "netrw", "fugitive"
+          "netrw", "fugitive", "undotree", "diff"
         },
         section_separators = '',
         component_separators = ''
