@@ -29,7 +29,12 @@ return {
         "terraformls",
         "yamlls",
         "powershell_es",
-        "slint_lsp"
+        "jsonls",
+        "dockerls",
+        "html",
+        "tailwindcss",
+        "markdown_oxide",
+        "pylsp",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed

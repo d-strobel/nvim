@@ -133,8 +133,38 @@ return {
       bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
     })
 
-    -- SlintUI lsp config
-    lspconfig["slint_lsp"].setup({
+    -- JSON lsp config
+    lspconfig["jsonls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- Dockerfile lsp config
+    lspconfig["dockerls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- HTML lsp config
+    lspconfig["html"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- Tailwind CSS lsp config
+    lspconfig["tailwindcss"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- Markdown oxide lsp config
+    lspconfig["markdown_oxide"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- Python oxide lsp config
+    lspconfig["pylsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
