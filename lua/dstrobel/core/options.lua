@@ -19,8 +19,9 @@ vim.opt.smartindent = true
 vim.opt.backspace = "indent,eol,start"
 
 -- Searching
-vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<ESC>', '<cmd>nohlsearch<cr>')
 
 -- Scrollin
 vim.opt.scrolloff = 8
