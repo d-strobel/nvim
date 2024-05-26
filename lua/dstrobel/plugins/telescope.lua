@@ -32,10 +32,12 @@ return {
     })
 
     -- set keymaps
-    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find in files" })
-    vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
-
+    local builtin = require 'telescope.builtin'
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+    vim.keymap.set("n", "<leader>fp", builtin.git_files, { desc = "[F]ind [F]iles" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep (live)" })
+    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
+    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [Word]" })
   end,
 }
-
