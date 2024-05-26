@@ -20,32 +20,18 @@ return {
       opts.buffer = bufnr
 
       -- Set keymaps
-      opts.desc = "Show LSP references"
-      keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-
-      opts.desc = "Go to declaration"
-      keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
-      opts.desc = "Show LSP definitions"
-      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-
-      opts.desc = "Show LSP implementations"
-      keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-
-      opts.desc = "Show LSP type definitions"
-      keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-
-      opts.desc = "See available code actions"
-      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-
-      opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-
-      opts.desc = "Show line diagnostics"
-      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-      opts.desc = "Show documentation for what is under cursor"
-      keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+      keymap.set("n", "gR", require('telescope.builtin').lsp_references, opts)
+      keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+      keymap.set("n", "gd", require('telescope.builtin').lsp_definitions, opts)
+      keymap.set("n", "gi", require('telescope.builtin').lsp_implementations, opts)
+      keymap.set("n", "gt", require('telescope.builtin').lsp_type_definitions, opts)
+      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+      keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts)
+      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+      keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+      keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+      keymap.set("n", "<leader>ih", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}), {}) end,
+        opts)
 
       vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     end
@@ -96,7 +82,7 @@ return {
     lspconfig["terraformls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "terraform", "terraform-vars" },
+      filetypes = { "tf", "terraform", "terraform-vars" },
     })
 
     -- configure lua server (with special settings)
@@ -150,6 +136,12 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    --
+    -- HTMX lsp config
+    lspconfig["htmx"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     -- Tailwind CSS lsp config
     lspconfig["tailwindcss"].setup({
@@ -157,13 +149,7 @@ return {
       on_attach = on_attach,
     })
 
-    -- Markdown oxide lsp config
-    lspconfig["markdown_oxide"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- Python oxide lsp config
+    -- Python lsp config
     lspconfig["pylsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
