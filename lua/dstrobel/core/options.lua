@@ -30,6 +30,10 @@ vim.opt.scrolloff = 8
 vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom
 
+-- Remap cnext and cprev for quickfix lists
+vim.keymap.set('n', 'J', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', 'K', '<cmd>cprev<CR>zz')
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
