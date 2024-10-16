@@ -44,6 +44,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set the commentstring for terraform files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "terraform", "hcl" },
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end
+})
+
 -- Neovide
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h11"
