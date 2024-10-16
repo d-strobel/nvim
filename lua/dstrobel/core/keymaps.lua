@@ -29,5 +29,17 @@ keymap.set("n", "<leader>P", [["+P]])
 -- Delete to void registry
 keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- Sarch and replace
+-- Sarch and replace in current file
 keymap.set("n", "<leader>sr", ":%s/")
+
+-- Sarch and replace in quickfix
+keymap.set("n", "<leader>qr", ":cdo :%s/")
+keymap.set("n", "<leader>qR", ":cfdo :%s/")
+
+-- Open Quickfix list
+keymap.set("n", "<leader>qo", "<cmd>copen<CR>")
+keymap.set("n", "<leader>qc", "<cmd>cclose<CR>")
+
+-- Remap cnext and cprev for quickfix lists
+vim.keymap.set('n', '<leader>qj', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<leader>qk', '<cmd>cprev<CR>zz')
