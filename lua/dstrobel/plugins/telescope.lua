@@ -10,7 +10,6 @@ return {
 
     telescope.setup({
       defaults = {
-        -- winblend = 100,
         path_display = { "truncate " },
         mappings = {
           i = {
@@ -18,14 +17,14 @@ return {
             ["<C-j>"] = actions.move_selection_next,
             ["<C-l>"] = actions.select_default,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-s>"] = actions.select_horizontal,
+            ["<C-h>"] = actions.select_horizontal,
           },
           n = {
             ["<C-k>"] = actions.move_selection_previous,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-l>"] = actions.select_default,
             ["<C-v>"] = actions.select_vertical,
-            ["<C-s>"] = actions.select_horizontal,
+            ["<C-h>"] = actions.select_horizontal,
           },
         },
       },

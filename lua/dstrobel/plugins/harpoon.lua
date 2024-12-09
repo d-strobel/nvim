@@ -12,7 +12,6 @@ return {
 
     -- set keymaps
     local keymap = vim.keymap
-    -- keymap.set("n", "<leader>hh", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon ui with telescope" })
     keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
     keymap.set("n", "<A-a>", function() harpoon:list():add() end, { desc = "Add file to harpoon" })
@@ -35,7 +34,7 @@ return {
           harpoon.ui:select_menu_item({ vsplit = true })
         end, { buffer = cx.bufnr })
 
-        vim.keymap.set("n", "<C-s>", function()
+        vim.keymap.set("n", "<C-h>", function()
           harpoon.ui:select_menu_item({ split = true })
         end, { buffer = cx.bufnr })
       end,
