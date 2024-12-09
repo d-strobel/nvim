@@ -16,7 +16,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Editorconfig
-vim.g.editorconfig_enabled = true
+vim.g.editorconfig = true
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
