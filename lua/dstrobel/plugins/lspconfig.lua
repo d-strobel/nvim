@@ -26,7 +26,7 @@ return {
       keymap.set("n", "gi", require('telescope.builtin').lsp_implementations, opts)
       keymap.set("n", "gt", require('telescope.builtin').lsp_type_definitions, opts)
       keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-      keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.hover, opts)
+      keymap.set({ "n", "i" }, "<ca-h>", vim.lsp.buf.hover, opts)
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
       keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
       keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
