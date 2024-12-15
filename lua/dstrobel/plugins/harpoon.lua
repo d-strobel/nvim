@@ -30,11 +30,11 @@ return {
           harpoon.ui:select_menu_item()
         end, { buffer = cx.bufnr })
 
-        vim.keymap.set("n", "<C-v>", function()
+        vim.keymap.set("n", "%", function()
           harpoon.ui:select_menu_item({ vsplit = true })
         end, { buffer = cx.bufnr })
 
-        vim.keymap.set("n", "<C-h>", function()
+        vim.keymap.set("n", "\"", function()
           harpoon.ui:select_menu_item({ split = true })
         end, { buffer = cx.bufnr })
       end,

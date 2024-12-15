@@ -7,8 +7,8 @@ return {
         keymaps = {
           ["<CR>"] = "actions.select",
           ["<C-l>"] = "actions.select",
-          ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-          ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+          ["\""] = { "actions.select", opts = { horizontal = true } },
+          ["%"] = { "actions.select", opts = { vertical = true } },
           ["<Esc>"] = { "actions.close", mode = "n" },
           ["<leader>e"] = { "actions.parent", mode = "n" },
         },
