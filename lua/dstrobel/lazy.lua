@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ import = "dstrobel.plugins" }, {
   install = {
-    colorscheme = { "carbonfox" },
+    colorscheme = { "catppuccin" },
   },
   checker = {
     enabled = true,
