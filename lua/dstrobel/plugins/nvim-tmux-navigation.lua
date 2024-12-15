@@ -1,15 +1,10 @@
 return {
-  "alexghergh/nvim-tmux-navigation",
+  "nathom/tmux.nvim",
   config = function()
-    local nvim_tmux_nav = require('nvim-tmux-navigation')
-
-    nvim_tmux_nav.setup({
-      disable_when_zoomed = false,
-    })
-
-    vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-    vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-    vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-    vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+    local map = vim.api.nvim_set_keymap
+    map("n", "<C-h>", [[<cmd>lua require('tmux').move_left()<cr>]], {})
+    map("n", "<C-j>", [[<cmd>lua require('tmux').move_down()<cr>]], {})
+    map("n", "<C-k>", [[<cmd>lua require('tmux').move_up()<cr>]], {})
+    map("n", "<C-l>", [[<cmd>lua require('tmux').move_right()<cr>]], {})
   end,
 }
